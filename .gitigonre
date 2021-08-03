@@ -15,5 +15,5 @@
 # vendor/
 
 # JetBrain
-
 */.idea/
+.DS_Store
