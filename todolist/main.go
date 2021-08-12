@@ -15,6 +15,8 @@ var err error
 func main(){
 
 	config.DB, err = gorm.Open(mysql.Open(config.DbURL(config.BuildDBConfig())), &gorm.Config{})
+	db, _ := config.DB.DB()
+	defer db.Close()
 	if err != nil {
 		fmt.Println("status: ", err)
 	}
